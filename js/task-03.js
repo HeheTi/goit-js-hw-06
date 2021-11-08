@@ -21,3 +21,11 @@ const makeImgMarcup = ({ url, alt }) =>
 const galaryImg = images.map(makeImgMarcup).join("");
 
 galeryEl.insertAdjacentHTML("afterbegin", galaryImg);
+
+galeryEl
+  .querySelectorAll("li")
+  .forEach((item) => item.classList.add("js-item"));
+
+galeryEl
+  .querySelectorAll("img")
+  .forEach((item) => item.classList.add("js-item-img"));
