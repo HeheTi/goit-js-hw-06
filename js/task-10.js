@@ -8,6 +8,10 @@ const refs = {
   input: document.querySelector("input"),
 };
 
+function makeEmptyInput() {
+  refs.input.value = "";
+}
+
 const createBoxes = function (value) {
   const arrDiv = [];
   let size = 30;
@@ -27,16 +31,17 @@ const getValue = () => {
   if (!value) return;
   if (+refs.input.max < value) {
     alert("Enter the amount up to 100");
+    makeEmptyInput();
     return;
   }
   createBoxes(value);
-  refs.input.addEventListener("focus", () => (refs.input.value = ""));
+  refs.input.addEventListener("focus", makeEmptyInput);
 };
 refs.btnAdd.addEventListener("click", getValue);
 
 refs.btnDestroy.addEventListener("click", () => {
   refs.boxes.innerHTML = "";
-  refs.input.value = "";
+  makeEmptyInput();
 });
 
 // refs.btnAdd.addEventListener("click", () => createBoxes(refs.input.value));
