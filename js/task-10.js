@@ -44,4 +44,4 @@ refs.btnDestroy.addEventListener("click", () => {
   makeEmptyInput();
 });
 
-// refs.btnAdd.addEventListener("click", () => createBoxes(refs.input.value));
+/* refs.btnAdd.addEventListener("click", () => createBoxes(refs.input.value));*/
