@@ -6,9 +6,9 @@ const refs = {
 refs.textInput.addEventListener(
   "input",
   () =>
-    (refs.textShow.textContent = textInput.value
-      ? textInput.value
+    (refs.textShow.textContent = refs.textInput.value
+      ? refs.textInput.value
       : "Anonymous")
 );
 
-refs.textInput.addEventListener("blur", () => (textInput.value = ""));
+refs.textInput.addEventListener("blur", () => (refs.textInput.value = ""));
