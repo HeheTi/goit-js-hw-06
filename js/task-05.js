@@ -1,8 +1,14 @@
-const textInput = document.querySelector("#name-input");
-const textShow = document.querySelector("#name-output");
+const refs = {
+  textInput: document.querySelector("#name-input"),
+  textShow: document.querySelector("#name-output"),
+};
 
-textInput.addEventListener("input", () => {
-  textShow.textContent = textInput.value ? textInput.value : "Anonymous";
-});
+refs.textInput.addEventListener(
+  "input",
+  () =>
+    (refs.textShow.textContent = textInput.value
+      ? textInput.value
+      : "Anonymous")
+);
 
-textInput.addEventListener("blur", () => (textInput.value = ""));
+refs.textInput.addEventListener("blur", () => (textInput.value = ""));
